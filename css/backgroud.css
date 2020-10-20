@@ -1,3 +1,9 @@
+@font-face {
+ font-family: "a_LCDNova";
+
+ src: url("../static/fonts/ticker.ttf") format("opentype");
+}
+
 body {
     width: 1920px;
     height: 1080px;
@@ -5,7 +11,33 @@ body {
     margin: 0;
 }
 
+.ticker {
+    position: absolute;
+    top: 100px;
+    left: 1223px;
+    width: 359px;
+    height: 91px;
+}
+
+.ticker__title {
+}
+
+.ticker__data {
+    margin-top: 8px;
+}
+
+.ticker marquee {
+    font-family: "a_LCDNova", serif;
+    letter-spacing: 3px;
+    line-height: 41px;
+    height: 41px;
+    width: 359px;
+    font-size: 28px;
+    color: #d0a640;
+}
+
+
 img.background {
-max-width:100%;
-max-height:100%;
+    max-width: 100%;
+    max-height: 100%;
 }

@@ -20,13 +20,15 @@ body {
 }
 
 .ticker__title {
+    position: relative;
 }
 
 .ticker__data {
+    position: relative;
     margin-top: 8px;
 }
 
-.ticker marquee {
+.ticker .marquee {
     font-family: "a_LCDNova", serif;
     letter-spacing: 3px;
     line-height: 41px;
@@ -35,7 +37,6 @@ body {
     font-size: 28px;
     color: #d0a640;
 }
-
 
 img.background {
     max-width: 100%;

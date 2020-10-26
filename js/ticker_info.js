@@ -1,5 +1,5 @@
-let tickerTitleElem = document.querySelector('.ticker__title .marquee');
-let tickerDataElem = document.querySelector('.ticker__data .marquee');
+let tickerTitleElem = document.querySelector('.ticker__title span');
+let tickerDataElem = document.querySelector('.ticker__data span');
 const request = new XMLHttpRequest();
 const url = 'http://api_riot.local/tft/match_per_stream/ofry';
 

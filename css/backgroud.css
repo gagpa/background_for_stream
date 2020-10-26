@@ -42,3 +42,20 @@ img.background {
     max-width: 100%;
     max-height: 100%;
 }
+
+.marquee {
+    text-align:left;width:100%;overflow:hidden;white-space: nowrap;
+}
+
+.marquee span {
+    display:inline-block;width:100%;text-indent:0;animation: marquee 10s linear infinite
+}
+
+.marquee span:hover {
+    animation-play-state: paused
+}
+
+@keyframes marquee {
+0%  { transform: translate(100%, 0); }
+100% { transform: translate(-100%, 0); }
+}

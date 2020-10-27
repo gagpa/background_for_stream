@@ -10,7 +10,6 @@ function insertTickerInfo() {
     let tickerTitle = responseJson.data.tickerTitle;
     let tickerData = responseJson.data.tickerData;
     if (!tickerTitleElem.textContent){
-        console.log('1');
         tickerTitleElem.textContent = tickerTitle;
     }
     tickerDataElem.textContent = tickerData.length ? tickerData : 'Первая игра';

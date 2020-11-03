@@ -1,30 +1,35 @@
-let tickerTitleElem = document.querySelector('.ticker__title span');
-let tickerDataElem = document.querySelector('.ticker__data span');
-const request = new XMLHttpRequest();
-const url = 'http://api_riot.local/tft/match_per_stream/ofry';
+function Ticker() {
+    let tickerTitleElem = document.querySelector('.ticker__title span');
+    let tickerDataElem = document.querySelector('.ticker__data span');
+    const REQUEST = new XMLHttpRequest();
+    let url = 'http://api_riot.local/tft/score/ofry';
 
-function insertTickerInfo() {
-    let response = request.responseText;
-    let responseJson = JSON.parse(response);
+    function insertTickerInfo() {
+        let response = REQUEST.responseText;
+        let responseJson = JSON.parse(response);
 
-    let tickerTitle = responseJson.data.tickerTitle;
-    let tickerData = responseJson.data.tickerData;
-    if (!tickerTitleElem.textContent){
-        tickerTitleElem.textContent = tickerTitle;
-    }
-    tickerDataElem.textContent = tickerData.length ? tickerData : 'Первая игра';
-}
-function sendRequest() {
-    request.open('GET', url);
-    request.setRequestHeader('Content-Type', 'application/x-www-form-url');
-    request.addEventListener("readystatechange", () => {
-        if (request.readyState === 4 && request.status === 200) {
-            insertTickerInfo();
+        let tickerTitle = responseJson.data.tickerTitle;
+        let tickerData = responseJson.data.tickerData;
+        if (!tickerTitleElem.textContent) {
+            tickerTitleElem.textContent = tickerTitle;
         }
-    });
+        tickerDataElem.textContent = tickerData.length ? tickerData : 'Первая игра';
+    }
 
-    request.send();
+
+    this.sendRequest = function () {
+        REQUEST.open('GET', url);
+        REQUEST.setRequestHeader('Content-Type', 'application/x-www-form-url');
+        REQUEST.addEventListener('readystatechange', () => {
+            if (REQUEST.readyState === 4 && REQUEST.status === 200) {
+                insertTickerInfo();
+            }
+        });
+
+        REQUEST.send();
+    }
 }
 
-sendRequest()
-setInterval(sendRequest, 10000)
+let ticker = new Ticker();
+ticker.sendRequest();
+setInterval(ticker.sendRequest, 10000)

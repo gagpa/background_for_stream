@@ -4,6 +4,12 @@
  src: url("../static/fonts/ticker.ttf") format("opentype");
 }
 
+@font-face {
+    font-family: "Graffiti";
+
+    src: url("../static/fonts/16804.otf" )format("opentype");
+}
+
 body {
     width: 1920px;
     height: 1080px;
@@ -56,6 +62,27 @@ img.background {
 }
 
 @keyframes marquee {
-0%  { transform: translate(100%, 0); }
-100% { transform: translate(-100%, 0); }
+    0%  { transform: translate(100%, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+div.chart {
+    position: absolute;
+    top: 410px;
+    left: 148px;
+    width: 400px;
+    height: 400px;
+}
+
+div.chart__name {
+    position: absolute;
+    width: 292px;
+    height: 49px;
+    top: 346px;
+    left: 205px;
+    font-family: Graffiti;
+    font-size: 30pt;
+    color: #c8100e;
+    text-shadow: black 0 0 4px;
+    /*background-color: black;*/
 }
